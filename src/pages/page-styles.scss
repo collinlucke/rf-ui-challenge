@@ -1,0 +1,11 @@
+@use "../styles/variables.scss" as *;
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  @media (min-width: $breakpoint-lg) {
+    gap: 40px;
+  }
+}

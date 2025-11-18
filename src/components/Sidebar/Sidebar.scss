@@ -1,0 +1,50 @@
+@use "../../styles/variables.scss" as *;
+
+.sidebar-nav {
+  box-shadow: inset 1px 0px 0px $color-light-gray,
+    inset -1px 0px 0px $color-light-gray;
+  padding: 12px 0;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: $breakpoint-xs) {
+    padding: 12px 7.5px;
+  }
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rf-logo {
+  padding: 8px 4px 24px 4px;
+
+  @media (min-width: $breakpoint-xs) {
+    padding-left: 12px;
+  }
+}
+
+.event-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-icon {
+  width: 32px;
+  padding: 2px;
+  height: auto;
+  object-fit: cover;
+
+  @media (min-width: $breakpoint-xs) {
+    width: 40px;
+    padding: 4px 0 8px 0;
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "RainFocus Summit",
+      "date": "2025/12/15",
+      "location": "Lehi, Utah",
+      "icon": "rf-summit-logo.png",
+      "baseSettings": [
+        {
+          "id": 1,
+          "settingName": "General",
+          "description": "Define Attendee types & attributes"
+        },
+        {
+          "id": 2,
+          "settingName": "Title",
+          "description": "Description that explains the value goes here. Description that explains the value goes here."
+        },
+        {
+          "id": 3,
+          "settingName": "Title",
+          "description": "Description that explains the value goes here. Description that explains the value goes here."
+        }
+      ],
+      "registrationWorkflows": [
+        {
+          "id": 1,
+          "workflowName": "Attendee Registration",
+          "description": "Start by creating a general registration workflow"
+        },
+        {
+          "id": 2,
+          "workflowName": "Attendee Registration",
+          "description": "Start by creating a general registration workflow"
+        },
+        {
+          "id": 3,
+          "workflowName": "Attendee Registration",
+          "description": "Start by creating a general registration workflow"
+        }
+      ],
+      "postRegExperiences": [
+        {
+          "id": 1,
+          "experienceName": "Attendee Portal",
+          "description": "Manage the portal that attendees will see after they’ve register for your event."
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Fran",
+      "lastName": "Lebowitz",
+      "email": "fran.lebowitz@example.com"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+@use "../../styles/variables.scss" as *;
+
+hr {
+  background: $color-light-gray;
+  height: 1px;
+  border: none;
+  margin: 0;
+}
+
+.section-accordion,
+.section-accordion-sections,
+.sections-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-accordion-sections {
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: transparent;
+  width: 100%;
+  padding: 0;
+  &:hover {
+    h3 {
+      color: $color-primary;
+    }
+  }
+}
+
+.accordion-icon {
+  width: 28px;
+  height: 28px;
+
+  @media (min-width: $breakpoint-sm) {
+    width: 35px;
+    height: 35px;
+  }
+}

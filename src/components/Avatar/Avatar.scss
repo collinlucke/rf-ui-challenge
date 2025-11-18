@@ -1,0 +1,13 @@
+@use "../../styles/variables.scss" as *;
+
+.avatar-wrapper {
+  padding: 4px 8px;
+}
+
+.avatar-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: $color-medium-gray;
+  color: white;
+}
