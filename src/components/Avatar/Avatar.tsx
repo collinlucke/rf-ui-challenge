@@ -8,7 +8,6 @@ export const Avatar = ({ user }: { user: User }) => {
 
   return (
     <div className="avatar-wrapper">
-      {/* Dummy link */}
       <Link to="#">
         <Button
           className="avatar-button"

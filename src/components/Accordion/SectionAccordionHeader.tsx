@@ -6,7 +6,7 @@ type AccordionHeaderProps = {
   title?: string;
   isOpen?: boolean;
 
-  setIsOpen: (value: boolean | ((prevState: boolean) => boolean)) => void;
+  setIsOpen: () => void;
 };
 
 export const SectionAccordionHeader = ({
@@ -16,8 +16,7 @@ export const SectionAccordionHeader = ({
   setIsOpen,
 }: AccordionHeaderProps) => {
   const setIsOpenHandler = () => {
-    // I like to use handlers for clarity
-    setIsOpen((prev: boolean) => !prev);
+    setIsOpen();
   };
 
   return (

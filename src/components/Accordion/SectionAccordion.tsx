@@ -12,7 +12,7 @@ type SectionAccordionProps = {
   title: string;
   sections: SectionType[];
   isOpen: boolean;
-  setIsOpen: (value: boolean | ((prevState: boolean) => boolean)) => void;
+  setIsOpen: () => void;
 };
 
 export const SectionAccordion = ({
@@ -24,9 +24,6 @@ export const SectionAccordion = ({
 }: SectionAccordionProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<string>("0px");
-  const toggleAccordion = () => {
-    setIsOpen((prev) => !prev);
-  };
 
   useLayoutEffect(() => {
     if (contentRef.current) {
@@ -44,7 +41,7 @@ export const SectionAccordion = ({
         icon={icon}
         title={title}
         isOpen={isOpen}
-        setIsOpen={toggleAccordion}
+        setIsOpen={setIsOpen}
       />
 
       <div className={`section-accordion-sections`} style={{ height }}>

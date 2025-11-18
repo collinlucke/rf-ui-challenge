@@ -4,7 +4,6 @@ import type { Event } from "../../contexts/CurrentEventContext";
 
 const EventMenuItem = ({ event }: { event: Event }) => {
   return (
-    // Just a dummy link...
     <Link className="event-menu-item" to={`#`}>
       {event.icon ? (
         <img

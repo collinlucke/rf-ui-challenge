@@ -12,6 +12,10 @@ const EventPage = () => {
   const { currentEvent } = useContext(CurrentEventContext);
   const [isAttendeeOpen, setIsAttendeeOpen] = useState(true);
 
+  const setAttendeeOpen = () => {
+    setIsAttendeeOpen((prev) => !prev);
+  };
+
   const stepTitle = (stepNumber: number, stepName: string) => {
     return (
       <div className="step-title">
@@ -54,7 +58,7 @@ const EventPage = () => {
         title="Attendee"
         sections={attendeeSetupSteps}
         isOpen={isAttendeeOpen}
-        setIsOpen={setIsAttendeeOpen}
+        setIsOpen={setAttendeeOpen}
       />
     </div>
   );
