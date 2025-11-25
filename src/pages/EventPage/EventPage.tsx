@@ -2,9 +2,6 @@ import { useContext, useState } from "react";
 import { CurrentEventContext } from "../../contexts/CurrentEventContext";
 import { Heading } from "../../components/Heading/Heading";
 import { SectionAccordion } from "../../components/Accordion/SectionAccordion";
-import { StepOne } from "./AttendeeSteps/StepOne";
-import { StepTwo } from "./AttendeeSteps/StepTwo";
-import { StepThree } from "./AttendeeSteps/StepThree";
 import "../page-styles.scss";
 import "./EventPage.scss";
 
@@ -15,29 +12,6 @@ const EventPage = () => {
   const setAttendeeOpen = () => {
     setIsAttendeeOpen((prev) => !prev);
   };
-
-  const stepTitle = (stepNumber: number, stepName: string) => {
-    return (
-      <div className="step-title">
-        <span className="step-number">Step {stepNumber}:</span> {stepName}
-      </div>
-    );
-  };
-
-  const attendeeSetupSteps = [
-    {
-      title: stepTitle(1, "Base settings."),
-      content: <StepOne />,
-    },
-    {
-      title: stepTitle(2, "Build registration workflows."),
-      content: <StepTwo />,
-    },
-    {
-      title: stepTitle(3, "Design post-registration experiences."),
-      content: <StepThree />,
-    },
-  ];
 
   return (
     <div className="page-wrapper">
@@ -56,7 +30,7 @@ const EventPage = () => {
       <SectionAccordion
         icon="person-portal.svg"
         title="Attendee"
-        sections={attendeeSetupSteps}
+        sections={currentEvent.settingsAndWorkflowSteps}
         isOpen={isAttendeeOpen}
         setIsOpen={setAttendeeOpen}
       />

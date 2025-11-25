@@ -1,0 +1,69 @@
+@use "../../styles/variables.scss" as *;
+
+.accordion-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accordion-steps {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: $breakpoint-xs) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  &.step-outlined {
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: $breakpoint-xs) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $breakpoint-md) {
+      padding: 16px 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.step-number {
+  font-weight: 700;
+  color: $color-dark-gray;
+}
+
+.step-outlined {
+  box-shadow: inset 1px 1px 0px $color-light-gray,
+    inset -1px -1px 0px $color-light-gray;
+  border-radius: 4px;
+  padding: 16px 24px;
+  display: grid;
+}
+
+.accordion-icon {
+  width: 28px;
+  height: 28px;
+  @media (min-width: $breakpoint-sm) {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.step-title {
+  font-size: 14px;
+  color: $color-dark-gray;
+  margin-bottom: 8px;
+}

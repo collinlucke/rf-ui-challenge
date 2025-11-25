@@ -1,34 +1,33 @@
 import { createContext } from "react";
 import type { Dispatch, SetStateAction } from "react";
 
-export type Setting = {
+export type StepItem = {
   id: number;
-  settingName: string;
-  description: string;
-};
-
-export type RegistrationWorkflow = {
-  id: number;
-  workflowName: string;
+  itemName: string;
   description?: string;
+  className?: string;
   icon?: string;
 };
 
-export type PostRegistrationExperience = {
+export type SectionData = {
   id: number;
-  experienceName: string;
-  description: string;
+  icon: number;
+  order: number;
+  title: string | React.ReactNode;
+  stepItems: StepItem[];
+  stepSectionDisplaySettings: { outlineSection: boolean };
+  setItemStyleSettings: { outlined: boolean; baseDivs: boolean };
 };
+
+type settingsAndWorkflowStepsProps = SectionData[];
 
 export type Event = {
-  id: number;
-  title?: string;
   date?: string;
-  location?: string;
   icon?: string;
-  baseSettings?: Setting[];
-  registrationWorkflows?: RegistrationWorkflow[];
-  postRegExperiences?: PostRegistrationExperience[];
+  id: number;
+  location?: string;
+  settingsAndWorkflowSteps: settingsAndWorkflowStepsProps;
+  title?: string;
 };
 
 export type CurrentEventContextType = {
@@ -37,6 +36,6 @@ export type CurrentEventContextType = {
 };
 
 export const CurrentEventContext = createContext<CurrentEventContextType>({
-  currentEvent: { id: 0 },
+  currentEvent: { id: 0, settingsAndWorkflowSteps: [] },
   setCurrentEvent: () => {},
 });

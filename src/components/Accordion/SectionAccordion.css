@@ -13,11 +13,6 @@ hr {
   gap: 24px;
 }
 
-.section-accordion-sections {
-  overflow: hidden;
-  transition: height 0.3s ease-in-out;
-}
-
 .accordion-header {
   display: flex;
   align-items: center;
@@ -30,13 +25,7 @@ hr {
   color: #5c00dc;
 }
 
-.accordion-icon {
-  width: 28px;
-  height: 28px;
-}
-@media (min-width: 620px) {
-  .accordion-icon {
-    width: 35px;
-    height: 35px;
-  }
+.accordion-sections {
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
 }/*# sourceMappingURL=SectionAccordion.css.map */

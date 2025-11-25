@@ -1,0 +1,38 @@
+@use "../../styles/variables.scss" as *;
+
+.step-item {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.step-item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-outlined {
+  box-shadow: inset 1px 1px 0px $color-light-gray,
+    inset -1px -1px 0px $color-light-gray;
+  border-radius: 4px;
+  padding: 24px 32px;
+  min-height: 56px;
+}
+
+.step-item-name {
+  font-weight: 600;
+  color: $color-medium-gray;
+}
+
+.step-item-description {
+  font-size: 12px;
+  color: $main-text-color;
+}
+
+.add-workflow-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

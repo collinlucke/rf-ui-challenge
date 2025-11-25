@@ -1,28 +1,28 @@
-import { useRef, useState, useLayoutEffect } from "react";
+import { useRef, useState, useLayoutEffect, useContext } from "react";
+import {
+  CurrentEventContext,
+  type SectionData,
+} from "../../contexts/CurrentEventContext";
+import { AccordionSection } from "./AccordionSection";
 import { SectionAccordionHeader } from "./SectionAccordionHeader";
 import "./SectionAccordion.scss";
 
-type SectionType = {
-  title: React.ReactNode;
-  content: React.ReactNode;
-};
-
 type SectionAccordionProps = {
-  icon: string;
-  title: string;
-  sections: SectionType[];
   isOpen: boolean;
+  sections: SectionData[];
+  icon?: string;
+  title?: string;
   setIsOpen: () => void;
 };
 
 export const SectionAccordion = ({
-  icon,
-  title,
   sections,
   isOpen,
-  setIsOpen,
+  ...rest
 }: SectionAccordionProps) => {
   const contentRef = useRef<HTMLDivElement>(null);
+  const { currentEvent } = useContext(CurrentEventContext);
+  const { settingsAndWorkflowSteps: sectionSteps } = currentEvent;
   const [height, setHeight] = useState<string>("0px");
 
   useLayoutEffect(() => {
@@ -37,20 +37,15 @@ export const SectionAccordion = ({
   return (
     <div className="section-accordion">
       <hr />
-      <SectionAccordionHeader
-        icon={icon}
-        title={title}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-      />
+      <SectionAccordionHeader {...rest} />
 
-      <div className={`section-accordion-sections`} style={{ height }}>
+      <div className={`accordion-sections`} style={{ height }}>
         <div ref={contentRef} className="sections-content">
-          {sections.map((section, index) => (
-            <section key={index}>
-              {section.title}
-              {section.content}
-            </section>
+          {sectionSteps.map((section, index) => (
+            <AccordionSection
+              sectionData={section}
+              key={section.order || index}
+            />
           ))}
         </div>
       </div>

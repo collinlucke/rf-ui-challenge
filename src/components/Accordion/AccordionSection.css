@@ -1,0 +1,72 @@
+.accordion-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accordion-steps {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 480px) {
+  .accordion-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .accordion-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+.accordion-steps.step-outlined {
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 480px) {
+  .accordion-steps.step-outlined {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .accordion-steps.step-outlined {
+    padding: 16px 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .accordion-steps.step-outlined {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.step-number {
+  font-weight: 700;
+  color: #222222;
+}
+
+.step-outlined {
+  box-shadow: inset 1px 1px 0px #cbc6df, inset -1px -1px 0px #cbc6df;
+  border-radius: 4px;
+  padding: 16px 24px;
+  display: grid;
+}
+
+.accordion-icon {
+  width: 28px;
+  height: 28px;
+}
+@media (min-width: 620px) {
+  .accordion-icon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.step-title {
+  font-size: 14px;
+  color: #222222;
+  margin-bottom: 8px;
+}/*# sourceMappingURL=AccordionSection.css.map */

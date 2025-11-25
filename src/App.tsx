@@ -6,7 +6,7 @@ import {
 import { UserContext, type UserContextType } from "./contexts/UserContext";
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "./components/Sidebar/Sidebar";
-import "./styles/main.scss";
+import "./App.scss";
 
 type EventsType = CurrentEventContextType["currentEvent"][];
 
@@ -14,7 +14,7 @@ function App() {
   const [events, setEvents] = useState<EventsType>([]);
   const [currentEvent, setCurrentEvent] = useState<
     CurrentEventContextType["currentEvent"]
-  >({ id: 0 });
+  >({ id: 0, settingsAndWorkflowSteps: [] });
   const [user, setUser] = useState<UserContextType["user"]>({ id: 0 });
   const [isLoading, setIsLoading] = useState(true);
 

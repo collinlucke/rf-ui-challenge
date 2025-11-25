@@ -6,45 +6,85 @@
       "date": "2025/12/15",
       "location": "Lehi, Utah",
       "icon": "rf-summit-logo.png",
-      "baseSettings": [
+      "settingsAndWorkflowSteps": [
         {
-          "id": 1,
-          "settingName": "General",
-          "description": "Define Attendee types & attributes"
+          "title": "Base settings.",
+          "stepDescription": "Configure the basic settings for the event.",
+          "order": 1,
+          "stepItems": [
+            {
+              "id": 1,
+              "itemName": "General",
+              "description": "Define Attendee types & attributes",
+              "icon": ""
+            },
+            {
+              "id": 2,
+              "itemName": "Title",
+              "description": "Description that explains the value goes here. Description that explains the value goes here.",
+              "icon": ""
+            },
+            {
+              "id": 3,
+              "itemName": "Title",
+              "description": "Description that explains the value goes here. Description that explains the value goes here.",
+              "icon": ""
+            }
+          ],
+          "setItemStyleSettings": {
+            "outlined": false
+          },
+          "stepSectionDisplaySettings": {
+            "outlineSection": true
+          }
         },
         {
-          "id": 2,
-          "settingName": "Title",
-          "description": "Description that explains the value goes here. Description that explains the value goes here."
+          "title": "Build registration workflows.",
+          "order": 2,
+          "stepItems": [
+            {
+              "id": 1,
+              "itemName": "Attendee Registration",
+              "description": "Start by creating a general registration workflow",
+              "icon": "workflow-arrow.svg"
+            },
+            {
+              "id": 2,
+              "itemName": "Attendee Registration",
+              "description": "Start by creating a general registration workflow",
+              "icon": "workflow-arrow.svg"
+            },
+            {
+              "id": 3,
+              "itemName": "Attendee Registration",
+              "description": "Start by creating a general registration workflow",
+              "icon": "workflow-arrow.svg"
+            }
+          ],
+          "setItemStyleSettings": {
+            "outlined": true
+          },
+          "stepSectionDisplaySettings": {
+            "outlineSection": false
+          }
         },
         {
-          "id": 3,
-          "settingName": "Title",
-          "description": "Description that explains the value goes here. Description that explains the value goes here."
-        }
-      ],
-      "registrationWorkflows": [
-        {
-          "id": 1,
-          "workflowName": "Attendee Registration",
-          "description": "Start by creating a general registration workflow"
-        },
-        {
-          "id": 2,
-          "workflowName": "Attendee Registration",
-          "description": "Start by creating a general registration workflow"
-        },
-        {
-          "id": 3,
-          "workflowName": "Attendee Registration",
-          "description": "Start by creating a general registration workflow"
-        }
-      ],
-      "postRegExperiences": [
-        {
-          "id": 1,
-          "experienceName": "Attendee Portal",
-          "description": "Manage the portal that attendees will see after they’ve register for your event."
+          "title": "Design post-registration experiences.",
+          "order": 3,
+          "stepItems": [
+            {
+              "id": 1,
+              "itemName": "Attendee Portal",
+              "description": "Manage the portal that attendees will see after they’ve register for your event.",
+              "icon": "computer.svg"
+            }
+          ],
+          "setItemStyleSettings": {
+            "outlined": true
+          },
+          "stepSectionDisplaySettings": {
+            "outlineSection": false
+          }
         }
       ]
     }
